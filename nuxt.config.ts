@@ -7,4 +7,13 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true }
   },
+  nitro: {
+    azure: {
+      config: {
+        platform: {
+          apiRuntime: 'node:23'
+        }
+      }
+    }
+  }
 })
