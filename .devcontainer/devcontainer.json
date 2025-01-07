@@ -1,0 +1,30 @@
+{
+    "name": "Azure Nuxt/Java Dev Environment",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shellIntegration.enabled": true,
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "ms-azuretools.vscode-azurecli",
+                "ms-vscode.azure-account",
+                "ms-azuretools.vscode-docker",
+                "esbenp.prettier-vscode",
+                "bierner.markdown-mermaid",
+                "editorconfig.editorconfig",
+                "Vue.volar",
+                "github.vscode-github-actions"
+            ]
+        }
+    },
+    "forwardPorts": [
+        3000
+    ],
+	"postCreateCommand": "yarn install",
+	"mounts": [
+		"type=bind,source=/home/otsuka/.gitconfig,target=/home/vscode/.gitconfig"
+	]
+}
